@@ -1,6 +1,7 @@
-/* Google Fonts*/
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,27 +10,29 @@
     text-decoration: none;
     scroll-behavior: smooth;
     font-family: "Poppins", sans-serif;
-
 }
-:root{
-    --main-color: #FFA4BF;
+
+:root {
+    --main-color: #f0760b;
     --second-color: #4580B2;
     --third-color: #00A56B;
-   
 }
-section{
+
+section {
     padding: 50px 10%;
 }
-img{
+
+img {
     width: 100%;
 }
-*::selection
-{
+
+*::selection {
     background: var(--main-color);
     color: #fff;
 }
+
 /* Header */
-header{
+header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -43,7 +46,7 @@ header{
     background-color: white;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     font-size: 2.5rem;
@@ -57,11 +60,11 @@ header{
 }
 
 /* Navbar */
-.navbar{
+.navbar {
     display: flex;
 }
-.navbar a{
-   
+
+.navbar a {
     font-size: 1rem;
     padding: 10px 20px;
     color: #000000;
@@ -69,28 +72,29 @@ header{
     font-size: 25px;
     transition: background-color 0.5s ease, color 0.5s ease; /* Add transition for background color and text color */
     border-radius: 50px;
-
-
 }
-.navbar a:hover{
+
+.navbar a:hover {
     color: #fff;
     background: var(--main-color);
 }
+
 .navbar-image {
-    width: 35px; /* Adjust the width as needed */
+    width: 35px; 
     height: auto;
     border-radius: 4px;
 }
 
-#menu-icon{
+#menu-icon {
     font-size: 24px;
     cursor: pointer;
     z-index: 10001;
     display: none;
 }
 
-.welcome-content{
-    text-align: center; /* Center the text */
+/* Welcome Content */
+.welcome-content {
+    text-align: center; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +115,7 @@ header{
 .welcome-content .btn {
     padding: 10px 20px;
     font-size: 1rem;
-    color: var(--main-color); /* Use your main color for the text */
+    color: var(--main-color); 
     background-color: #fff; /* Default white background */
     border: 2px solid var(--main-color); /* Border with main color */
     border-radius: 50px; /* Border radius of 50px */
@@ -125,24 +129,12 @@ header{
 }
 
 .welcome-content .line {
-    width: 100%; /* Adjust the width as needed */
-    height: 1px; /* Adjust the height as needed */
-    background-color: black; /* Use your main color */
-    margin: 0 auto 2rem auto; /* Center the line and add space below */
+    width: 100%; 
+    height: 1px; 
+    background-color: black; 
+    margin: 0 auto 2rem auto; 
 }
 
-/* Overlay Text */
-.overlay-text {
-    position: absolute;
-    top: 10px; /* Adjust the position as needed */
-    left: 10px; /* Adjust the position as needed */
-    background-color: var(--main-color); /* Use your main color */
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    z-index: 1;
-}
 
 /* Home */
 .home {
@@ -160,7 +152,7 @@ header{
 }
 
 .left-image {
-    width: 49%; /* Adjust the width of the left image */
+    width: 49%; 
     height: 100%; /* Make the left image take the full height of the container */
     object-fit: cover; /* Ensure the image covers the container */
 }
@@ -174,7 +166,7 @@ header{
 
 .right-image {
     width: 100%;
-    height: calc(50% - 0.5rem); /* Make each right image take half the height of the container, minus the margin */
+    height: calc(50% - 0.5rem); 
     margin-bottom: 1rem; /* Adjust the margin between the right images */
     object-fit: cover; /* Ensure the image covers the container */
 }
@@ -211,16 +203,13 @@ header{
     margin: 1rem;
 }
 
-.home-content-section{
+.home-content-section {
     width: 100vw;
     background-color: #d7cfcf;
 }
 
 /* Recipes */
 .recipes-content {
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* justify-content: space-between; */
     padding: 5vh 10%;
 }
 
@@ -232,17 +221,16 @@ header{
     margin-bottom: 1rem;
 }
 
-.recipe-content-header-wrapper{
+.recipe-content-header-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
     margin-bottom: 0.5rem; /* Add more space after the h1 element */
-
 }
 
-.recipe-content-line{
-    height: 1px; /* Adjust the width as needed */
+.recipe-content-line {
+    height: 1px; 
     border: 1px solid black;
     margin: 0 auto;
     width: calc(100% - 275px);
@@ -267,16 +255,18 @@ header{
 }
 
 .recipe-image {
-    flex: 1 1 calc(50% - 1rem); /* Adjust the width of each recipe image container */
-    margin-bottom: 2rem; /* Add space between the recipe image containers */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    flex: 1 1 calc(50% - 1rem); 
+    margin-bottom: 2rem; 
+    box-sizing: border-box; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.row-images{
+
+
+.row-images {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -286,10 +276,10 @@ header{
 .recipes-content .btn {
     padding: 10px 20px 10px 20px;
     font-size: 1rem;
-    color: var(--main-color); /* Use your main color for the text */
-    background-color: #fff; /* Default white background */
-    border: 2px solid var(--main-color); /* Border with main color */
-    border-radius: 50px; /* Border radius of 50px */
+    color: var(--main-color); 
+    background-color: #fff; 
+    border: 2px solid var(--main-color); 
+    border-radius: 50px; 
     text-decoration: none;
     transition: background-color 0.5s ease, color 0.5s ease; /* Add transition for background color and text color */
 }
@@ -300,31 +290,84 @@ header{
 }
 
 /* About Us */
-
 .about-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
     margin-bottom: 0.5rem; /* Add more space after the h1 element */
-
 }
 
 .about-header .line {
-    height: 1px; /* Adjust the width as needed */
+    height: 1px; 
     border: 1px solid black;
     margin: 0 auto;
     width: calc(100% - 130px);
 }
 
-.about-us-container{   
+.about-us-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3vh 10%; /* Remove padding on the bottom */
+    padding: 3vh 10%; 
     width: 100%;
+}
 
+/* Welcome Section */
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/img/tasty-pizza-near-ingredients.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5vh 10%; 
+    height: 100vh; 
+    color: #fff; 
+    text-align: center; 
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px; 
+}
+
+.welcome-content h1 {
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+}
+
+.welcome-content p {
+    font-size: 1.2rem; 
+    margin-bottom: 2rem; /
+}
+
+.welcome-content .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem; 
+    color: var(--main-color); 
+    background-color: #fff; 
+    border: 2px solid var(--main-color); 
+    border-radius: 50px; 
+    text-decoration: none;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Add transition for background color and text color */
+}
+
+.welcome-content .btn:hover {
+    color: #fff;
+    background: var(--main-color); 
+}
+
+.welcome-content .line {
+    width: 100%; 
+    height: 1px; 
+    background-color: #fff; 
+    margin: 0 auto 2rem auto; 
 }
 
 /* Footer */
@@ -396,7 +439,6 @@ footer .container {
     font-size: 1rem;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .home {
@@ -406,13 +448,12 @@ footer .container {
 
     .home-images {
         flex-direction: column;
-;
     }
 
     .left-image, .right-images {
         width: 100%;
         height: auto;
-        margin-bottom: 1rem
+        margin-bottom: 1rem;
     }
 
     .right-image {
@@ -423,10 +464,12 @@ footer .container {
     .right-image:last-child {
         margin-bottom: 0;
     }
+
     .recipes-content {
         flex-direction: column;
         padding: 5vh 5%;
     }
+
     .recipes-images-column {
         flex-direction: column;
     }
@@ -439,35 +482,31 @@ footer .container {
         flex-direction: column;
     }
 
-    .recipe-content-header-wrapper{
+    .recipe-content-header-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
-        
     }
 
-    .recipe-content-line{
-        height: 0.5px; /* Adjust the width as needed */
+    .recipe-content-line {
+        height: 0.5px; 
         border: 1px solid black;
         width: 100%;
-        margin: 0 auto 2rem auto; /* Center the line and add space below */
-
+        margin: 0 auto 2rem auto; 
     }
 
-    .about-header{
+    .about-header {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
-        
     }
 
-    .about-header .line{
-        height: 0.5px; /* Adjust the width as needed */
+    .about-header .line {
+        height: 0.5px; 
         border: 1px solid black;
         width: 100%;
-        margin: 0 auto 2rem auto; /* Center the line and add space below */
-
+        margin: 0 auto 2rem auto;
     }
 }
