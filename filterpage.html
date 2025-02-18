@@ -50,8 +50,8 @@
             list-style: none;
             padding: 0;
             display: grid; /* Use grid for layout */
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-            gap: 10px; /* Spacing between items */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Spacing between items */
         }
 
         .recipe-item {
@@ -147,14 +147,18 @@
                 const recipeImage = document.createElement('img');
                 recipeImage.src = recipe.image;
                 recipeImage.alt = recipe.name;
-                recipeItem.appendChild(recipeImage);
-
-                const recipeLink = document.createElement('a');
+                
+                const imageLink = document.createElement('a');
                 const filename = recipe.name.toLowerCase().replace(/ /g, '-') + ".html";
-                recipeLink.href = "recipes/" + filename;
-                recipeLink.textContent = recipe.name;
-                recipeItem.appendChild(recipeLink);
+                imageLink.href = "recipes/" + filename;
+                imageLink.appendChild(recipeImage);
+                recipeItem.appendChild(imageLink);
 
+
+                const recipeName = document.createElement('div');
+                recipeName.textContent = recipe.name;
+                recipeName.style.textAlign = 'center';
+                recipeItem.appendChild(recipeName);
                 recipeList.appendChild(recipeItem);
             });
         }
