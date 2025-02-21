@@ -13,9 +13,11 @@
 }
 
 :root {
-    --main-color: #f0760b;
-    --second-color: #4580B2;
-    --third-color: #00A56B;
+    --main-color: #713213;
+    --second-color: #B7B382;
+    --third-color: #DF6500;
+    --fourth-color: #FFFFFF;
+    --fifth-color: #D2BEA5;
 }
 
 section {
@@ -43,7 +45,7 @@ header {
     justify-content: space-between;
     padding: 10px 10%;
     transition: 0.2s;
-    background-color: white;
+    background-color: #D2BEA5;
 }
 
 .logo {
@@ -54,10 +56,12 @@ header {
     color: #000000;
 }
 
-.fa-star {
-    font-size: 12rem; /* Make the icon three times bigger */
-    margin-right: 1rem; /* Add space between the icon and the text */
+.logo img {
+    width: 100px; 
+    height: auto;
+    border-radius: 4px;
 }
+
 
 /* Navbar */
 .navbar {
@@ -205,7 +209,7 @@ header {
 
 .home-content-section {
     width: 100vw;
-    background-color: #d7cfcf;
+    background-color: var(--second-color);
 }
 
 /* Recipes */
@@ -319,13 +323,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/img/tasty-pizza-near-ingredients.jpg);
+    background-image: url(img/background.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 5vh 10%; 
-    height: 100vh; 
-    color: #fff; 
+    height: 100vh;
+
+    color: black; 
     text-align: center; 
 }
 
@@ -372,8 +377,8 @@ header {
 
 /* Footer */
 footer {
-    background: #333;
-    color: #fff;
+    background: var(--main-color);
+    color: white;
     padding: 5vh 0;
     text-align: center;
 }
@@ -416,7 +421,7 @@ footer .container {
 }
 
 .footer-section ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
@@ -426,12 +431,12 @@ footer .container {
 
 .socials a {
     margin-right: 1rem;
-    color: #fff;
+    color:white;
     text-decoration: none;
 }
 
 .socials a:hover {
-    color: #ffa4bf;
+    color: var(--third-color);
 }
 
 .footer-bottom {
