@@ -444,8 +444,33 @@ footer .container {
     font-size: 1rem;
 }
 
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .navbar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 300px;
+        height: 100%;
+        background-color: white;
+    }
+
+    .navbar li {
+        margin-left: 0;
+    }
+
+    .navbar li a {
+        color: black;
+        font-size: large;
+        text-decoration: none; /* Remove underline from links */
+    }
+    
+    .navbar li a:hover {
+        color: var(--main-color); /* Change color on hover */
+    }
+
     .home {
         flex-direction: column;
         height: auto;
