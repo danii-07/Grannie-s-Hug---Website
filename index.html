@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
     <script src="main.js" defer></script>
 </head>
 <body>
@@ -39,6 +51,63 @@
         </div>
         
     </section>
+
+    <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Welcome to Granny's Hug
+            </h1>
+            <p class="hero-description">
+                Your cozy corner for effortless, tasty, and student-friendly meals. Whether you're missing home-cooked food or just figuring out the basics of cooking, we’ve got your back! We believe that no matter where you are in the world, a warm and hearty meal can bring a sense of comfort and nostalgia. Grannies Hub is here to make sure you never feel too far from home, one delicious bite at a time.
+            </p>
+            <a href="#" class="btn btn--full margin-right-sm"
+              >Start eating well</a
+            >
+            <a href="#" class="btn btn--outline">Learn more &darr;</a>
+            <div class="delivered-meals">
+              <div class="delivered-imgs">
+                <img src="img/customers/customer-1.jpg" alt="Customer photo" />
+                <img src="img/customers/customer-2.jpg" alt="Customer photo" />
+                <img src="img/customers/customer-3.jpg" alt="Customer photo" />
+                <img src="img/customers/customer-4.jpg" alt="Customer photo" />
+                <img src="img/customers/customer-5.jpg" alt="Customer photo" />
+                <img src="img/customers/customer-6.jpg" alt="Customer photo" />
+              </div>
+              <p class="delivered-text">
+                <span>250,000+</span> recipes contributed last year!
+              </p>
+            </div>
+          </div>
+          <div class="hero-img-box">
+            <img
+              src="img/hero.png"
+              class="hero-img"
+              alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-featured">
+        <div class="container">
+          <h2 class="heading-featured-in">As featured in</h2>
+          <div class="logos">
+            <img src="img/logos/techcrunch.png" alt="Techcrunch logo" />
+            <img
+              src="img/logos/business-insider.png"
+              alt="Business Insider logo"
+            />
+            <img
+              src="img/logos/the-new-york-times.png"
+              alt="The New York Times logo"
+            />
+            <img src="img/logos/forbes.png" alt="Forbes logo" />
+            <img src="img/logos/usa-today.png" alt="USA Today logo" />
+          </div>
+        </div>
+      </section>
+
     
     <section class="home" id="home">
         <div class="home-images">
@@ -60,6 +129,302 @@
             </div>
           </div>
     </section>
+
+    <section class="section-meals" id="meals">
+        <div class="container center-text">
+          <span class="subheading">Meals</span>
+          <h2 class="heading-secondary">
+            Easiest Recipes for Us
+          </h2>
+          <p class="hero-description">From comforting classics to creative twists, our recipes are designed to make cooking feel like a breeze. Whether you’re a beginner or a seasoned chef, you’ll find something to love in our collection of easy, delicious meals. We believe that food should be simple, affordable, and full of love. That’s why we’re here to guide you every step of the way, so you can enjoy a taste of home no matter where you are in the world.
+          </p>
+        </div>
+
+        <div class="container grid grid--3-cols margin-bottom-md">
+          <div class="meal">
+            <img
+              src="img/banh-mi.jpg"
+              class="meal-img"
+              alt="banh-mi"
+            />
+            <div class="meal-content">
+              <div class="meal-tags">
+                <span class="tag tag--vegetarian">Vegetarian</span>
+              </div>
+              <p class="meal-title">Banh Mi</p>
+              <ul class="meal-attributes">
+                <li class="meal-attribute">
+                  <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+                  <span><strong>650</strong> calories</span>
+                </li>
+                <li class="meal-attribute">
+                  <ion-icon
+                    class="meal-icon"
+                    name="restaurant-outline"
+                  ></ion-icon>
+                  <span>NutriScore &reg; <strong>74</strong></span>
+                </li>
+                <li class="meal-attribute">
+                  <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+                  <span><strong>4.9</strong> rating (537)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="meal">
+            <img
+              src="img/gazpacho.jpg"
+              class="meal-img"
+              alt="Gazpacho"
+            />
+            <div class="meal-content">
+              <div class="meal-tags">
+                <span class="tag tag--vegan">Vegan</span>
+                <span class="tag tag--paleo">Paleo</span>
+              </div>
+              <p class="meal-title">Gazpacho</p>
+              <ul class="meal-attributes">
+                <li class="meal-attribute">
+                  <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+                  <span><strong>400</strong> calories</span>
+                </li>
+                <li class="meal-attribute">
+                  <ion-icon
+                    class="meal-icon"
+                    name="restaurant-outline"
+                  ></ion-icon>
+                  <span>NutriScore &reg; <strong>92</strong></span>
+                </li>
+                <li class="meal-attribute">
+                  <ion-icon class="meal-icon" name="star-outline"></ion-icon>
+                  <span><strong>4.8</strong> rating (441)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="recipes-images-column">
+            <div class="row-images">
+                <div class="recipe-image">
+                    <img src="/img/banh-mi.jpg" alt="Banh Mi">
+                    <p>Banh Mi</p>
+                </div>
+                <div class="recipe-image">
+                    <img src="/img/gazpacho.jpg" alt="Gazpacho">
+                    <p>Gazpacho</p>
+                </div>
+                <div class="recipe-image">
+                    <img src="/img/shakshuka.jpg" alt="Shakshuka">
+                    <p>Shakshuka</p>
+                </div>
+            </div>
+            <div class="row-images">
+                <div class="recipe-image">
+                    <img src="/img/yakisoba.jpg" alt="Yakisoba">
+                    <p>Yakisoba</p>
+                </div >
+                <div class="recipe-image">
+                    <img src="/img/barley-sausage-soup.jpg" alt="Barley Sausage Soup">
+                    <p>Barley Sausage Soup</p>
+                </div>
+                <div class="recipe-image">
+                    <img src="/img/yakisoba.jpg" alt="Yakisoba">
+                    <p>Yakisoba</p>
+                </div>
+           </div>
+
+          <div class="diets">
+            <h3 class="heading-tertiary">Works with any diet:</h3>
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Vegetarian</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Vegan</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Pescatarian</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Gluten-free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Lactose-free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Keto</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Paleo</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Low FODMAP</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Kid-friendly</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container all-recipes">
+          <a href="#" class="link">See all recipes &rarr;</a>
+        </div>
+      </section>
+
+      <section class="section-testimonials" id="testimonials">
+        <div class="testimonials-container">
+          <span class="subheading">Testimonials</span>
+          <h2 class="heading-secondary">Once you try it, you can't go back</h2>
+
+          <div class="testimonials">
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Dave Bryson"
+                src="img/customers/dave.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Life as a student was never easier! It feels truly magical.
+              </blockquote>
+              <p class="testimonial-name">&mdash; Dave Bryson</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Ben Hadley"
+                src="img/customers/ben.jpg"
+              />
+              <blockquote class="testimonial-text">
+                The recipes are crazy good! It's amazing not to worry about home-cooked food anymore!
+              </blockquote>
+              <p class="testimonial-name">&mdash; Ben Hadley</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Steve Miller"
+                src="img/customers/steve.jpg"
+              />
+              <blockquote class="testimonial-text">
+               Granny's hug is a life saver! I just moved abroad and I miss homecooked food. I couldn't live without my daily meals now!
+              </blockquote>
+              <p class="testimonial-name">&mdash; Steve Miller</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Photo of customer Hannah Smith"
+                src="img/customers/hannah.jpg"
+              />
+              <blockquote class="testimonial-text">
+                I got started cooking as a complete novice with these recipes. I love it!.
+              </blockquote>
+              <p class="testimonial-name">&mdash; Hannah Smith</p>
+            </figure>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-1.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+            <!-- <figcaption>Caption</figcaption> -->
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-2.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-3.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-4.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-5.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-6.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-7.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-8.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-9.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-10.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-11.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-12.jpg"
+              alt="Photo of beautifully
+            arranged food"
+            />
+          </figure>
+        </div>
+      </section>
 
     <section>
         <div class="container">
