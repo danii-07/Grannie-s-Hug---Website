@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallo Pinto</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script src="main.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F7F7F7;
+            color: #333;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.4;
+            letter-spacing: 0.7px;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .heading-secondary {
+            letter-spacing: 0.5px;
+        }
+
+        .font-quicksand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .font-extrabold {
+            font-weight: 800;
+        }
+
+        .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+            letter-spacing: 1px;
+        }
+
+        .recipe-details ul {
+            margin-bottom: 20px;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            list-style-position: inside;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+        }
+
+        .bg-transparent {
+            background-color: transparent;
+        }
+
+        .border-gray-300 {
+            border-color: #d1d5db;
+        }
+
+        .border-collapse {
+            border-collapse: collapse;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .mt-10, .mt-8, .mt-6, .mt-4, .mt-36 {
+            margin-top: 2.5rem;
+        }
+
+        .mb-8, .mb-6, .mb-4, .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .space-y-4 {
+            margin-bottom: 1rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .px-6, .px-8, .px-4 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .tracking-wide {
+            letter-spacing: 1px;
+        }
+
+        .tracking-tight {
+            letter-spacing: 0.3px;
+        }
+
+        .text-gray-700 {
+            color: #4B5563;
+        }
+
+        .text-gray-800 {
+            color: #1F2937;
+        }
+
+        .text-orange-500 {
+            color: #FB923C;
+        }
+
+        .hover\:text-orange-500:hover {
+            color: #FB923C;
+        }
+
+        .bg-green-500 {
+            background-color: #10B981;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .space-x-6 {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        .min-w-full {
+            min-width: 100%;
+        }
+
+        .table-auto {
+            table-layout: auto;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .text-5xl {
+            font-size: 3rem;
+        }
+
+        .text-6xl {
+            font-size: 4rem;
+        }
+
+    </style>
+</head>
+<body class="font-sans bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="bg-[#d3c1a9] py-6 px-6 md:px-16 shadow-lg backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center text-3xl md:text-5xl font-extrabold text-gray-900 tracking-wide space-x-4 md:space-x-6">
+                <img src="/img/grannies_hug_logo.jpg" alt="Grannies' Hug" class="h-20 md:h-28 lg:h-32 w-auto"> <!-- Responsive Logo -->
+                <span class="font-quicksand">Granny's Hug</span>
+            </a>
+
+            <!-- Desktop Navbar -->
+            <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl md:text-2xl font-semibold tracking-tight">
+                <a href="#home" class="hover:text-orange-500 transition duration-300">Home</a>
+                <a href="#recipes" class="hover:text-orange-500 transition duration-300">Recipes</a>
+                <a href="#newsletter" class="hover:text-orange-500 transition duration-300">Newsletter</a>
+                <a href="#contact" class="hover:text-orange-500 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 text-4xl focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden bg-[#B7B382] py-4 px-6 space-y-4 text-lg font-semibold tracking-tight md:hidden absolute top-full left-0 w-full shadow-lg">
+            <a href="#index.html" class="block hover:text-orange-500 transition duration-300">Home</a>
+            <a href="#filter.html" class="block hover:text-orange-500 transition duration-300">Recipes</a>
+            <a href="#newsletter" class="block hover:text-orange-500 transition duration-300">Newsletter</a>
+            <a href="#contact.html" class="block hover:text-orange-500 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Push Content Down -->
+    <div class="pt-36"></div>
+
+    <div class="container mx-auto px-6 lg:px-20 mt-10 bg-white shadow-lg rounded-lg max-w-8xl">
+        <h1 class="text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-8">Gallo Pinto</h1>
+        <div class="recipe-details mb-8">
+            <img src="../img/gp.jpg" alt="Gallo Pinto" class="max-w-full h-auto rounded-md mb-8">
+
+            <h2 class="text-4xl heading-secondary text-gray-800 mb-6 font-semibold">Ingredients</h2>
+            <ul class="list-inside pl-8 text-2xl text-gray-700 font-medium space-y-4">
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="rice">360 grams cooked day-old white rice</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="beans">300 grams cooked day-old black or red beans (or 1 can)</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="broth">360 milliliters bean broth or water</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="onion">75 grams yellow onion (roughly 1/2 medium onion, chopped)</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="pepper">75 grams red pepper (roughly 1/2 medium pepper, chopped)</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="cilantro">10 grams chopped cilantro</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="salsalizano">30 milliliters Salsa Lizano</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="salt">Sea salt to taste</span></li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i><span class="ingredient" data-ingredient="oil">Vegetable oil or olive oil</span></li>
+            </ul>
+
+            <h2 class="text-4xl heading-secondary text-gray-800 mt-6 mb-4 font-semibold">Instructions</h2>
+            <ol class="list-inside pl-8 text-2xl text-gray-700 font-medium space-y-4">
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Heat oil in a large skillet over medium heat.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Add onion, pepper, and salt.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Lightly cook until the onion is translucent.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Add the beans with broth and toss with the chopped vegetables and oil.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Add the cooked rice to the skillet.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Toss until well combined with the beans and spices.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Add cilantro and lightly toss.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Heat thoroughly and add Salsa Lizano.</li>
+                <li><i class="fa fa-circle text-orange-500 mr-3"></i> Mix again and serve – preferably with fried eggs, warm corn tortillas, and a hot cup of Costa Rican coffee or agua dulce.</li>
+            </ol>
+
+            <h2 class="text-3xl font-semibold text-gray-800 mt-6">Servings</h2>
+            <p class="text-2xl text-gray-700 mt-2">4-6 servings</p>
+
+            <!-- Servings Calculator -->
+            <div class="mt-8">
+                <label for="servings" class="text-xl font-semibold text-gray-700">Adjust servings:</label>
+                <input type="number" id="servings" value="4" min="1" max="10" class="ml-4 p-2 border rounded-lg" onchange="calculateIngredients()">
+                <p id="serving-text" class="mt-2 text-xl text-gray-700">For 4 servings</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to calculate ingredients based on servings
+        function calculateIngredients() {
+            const servings = document.getElementById('servings').value;
+            const ingredientData = {
+                rice: 360,
+                beans: 300,
+                broth: 360,
+                onion: 75,
+                pepper: 75,
+                cilantro: 10,
+                salsalizano: 30,
+                salt: 'to taste',
+                oil: 'to taste'
+            };
+
+            const ingredients = document.querySelectorAll('.ingredient');
+            ingredients.forEach(ingredient => {
+                let ingredientType = ingredient.getAttribute('data-ingredient');
+                let baseAmount = ingredientData[ingredientType];
+                if (baseAmount !== 'to taste') {
+                    ingredient.textContent = `${baseAmount * servings / 4} grams of ${ingredientType.replace('_', ' ')}`;
+                } else {
+                    ingredient.textContent = `Sea salt and oil to taste`;
+                }
+            });
+
+            // Update serving text
+            document.getElementById('serving-text').textContent = `For ${servings} servings`;
+        }
+    </script>
+
+</body>
+</html>

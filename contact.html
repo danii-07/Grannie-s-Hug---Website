@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grannies</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script src="main.js" defer></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grannies</title>
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/queries.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Changed font -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule=""
+          src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+        ></script>
+        <script
+          defer
+          src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+        ></script>
+        <script src="main.js" defer></script>
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;  /* Font changed to Poppins */
+                background-color: #F7F7F7;
+                color: #333;
+                line-height: 1.6;
+                letter-spacing: 0.5px;
+            }
+    
+            h1, h2, h3, h4 {
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+            }
+    
+            .container {
+                margin: 0 auto;
+                max-width: 1200px;
+                padding: 0 20px;
+            }
+    
+            .heading-secondary {
+                letter-spacing: 0.5px;
+            }
+    
+            .font-quicksand {
+                font-family: 'Poppins', sans-serif;
+            }
+    
+            .font-semibold {
+                font-weight: 600;
+            }
+    
+            .font-extrabold {
+                font-weight: 800;
+            }
+    
+            .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+                letter-spacing: 1px;
+            }
+    
+            .recipe-details ul {
+                margin-bottom: 20px;
+            }
+    
+            ul, ol {
+                padding-left: 1.5rem;
+                list-style-position: inside;
+            }
+    
+            .bg-white {
+                background-color: #ffffff;
+            }
+    
+            .bg-transparent {
+                background-color: transparent;
+            }
+    
+            .border-gray-300 {
+                border-color: #d1d5db;
+            }
+    
+            .border-collapse {
+                border-collapse: collapse;
+            }
+    
+            .rounded-lg {
+                border-radius: 0.5rem;
+            }
+    
+            .shadow-lg {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+    
+            .mt-10, .mt-8, .mt-6, .mt-4, .mt-36 {
+                margin-top: 2.5rem;
+            }
+    
+            .mb-8, .mb-6, .mb-4, .mb-2 {
+                margin-bottom: 2rem;
+            }
+    
+            .space-y-4 {
+                margin-bottom: 1rem;
+            }
+    
+            .py-4 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+    
+            .px-6, .px-8, .px-4 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .tracking-wide {
+                letter-spacing: 1px;
+            }
+    
+            .tracking-tight {
+                letter-spacing: 0.3px;
+            }
+    
+            .text-gray-700 {
+                color: #4B5563;
+            }
+    
+            .text-gray-800 {
+                color: #1F2937;
+            }
+    
+            .text-orange-500 {
+                color: #FB923C;
+            }
+    
+            .hover\:text-orange-500:hover {
+                color: #FB923C;
+            }
+    
+            .bg-green-500 {
+                background-color: #10B981;
+            }
+    
+            .text-white {
+                color: white;
+            }
+    
+            .inline-block {
+                display: inline-block;
+            }
+    
+            .space-x-6 {
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+    
+            .min-w-full {
+                min-width: 100%;
+            }
+    
+            .table-auto {
+                table-layout: auto;
+            }
+            
+            .font-medium {
+                font-weight: 500;
+            }
+    
+            .text-lg {
+                font-size: 1.125rem;
+            }
+    
+            .text-xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.875rem;
+            }
+            
+            .text-4xl {
+                font-size: 2.25rem;
+            }
+    
+            .text-5xl {
+                font-size: 3rem;
+            }
+    
+            .text-6xl {
+                font-size: 4rem;
+            }
+            
+        </style>
+    </head>
+    
+</head>
+<body class="font-sans bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="bg-[#d3c1a9] py-6 px-6 md:px-16 shadow-lg backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center text-3xl md:text-5xl font-extrabold text-gray-900 tracking-wide space-x-4 md:space-x-6">
+                <img src="/img/grannies_hug_logo.jpg" alt="Grannies' Hug" class="h-20 md:h-28 lg:h-32 w-auto"> <!-- Responsive Logo -->
+                <span class="font-quicksand">Granny's Hug</span>
+            </a>
+
+            <!-- Desktop Navbar -->
+            <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl md:text-2xl font-semibold tracking-tight">
+                <a href="../index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+                <a href="../filter.html" class="hover:text-orange-500 transition duration-300">Recipes</a>
+                <a href="#newsletter" class="hover:text-orange-500 transition duration-300">Newsletter</a>
+                <a href="#contact" class="hover:text-orange-500 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 text-4xl focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden bg-[#B7B382] py-4 px-6 space-y-4 text-lg font-semibold tracking-tight md:hidden absolute top-full left-0 w-full shadow-lg">
+            <a href="#index.html" class="block hover:text-orange-500 transition duration-300">Home</a>
+            <a href="#filter.html" class="block hover:text-orange-500 transition duration-300">Recipes</a>
+            <a href="#newsletter" class="block hover:text-orange-500 transition duration-300">Newsletter</a>
+            <a href="#contact.html" class="block hover:text-orange-500 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Push Content Down -->
+<div class="pt-36"></div>
+
+<section class="section-about" id="about">
+    <div class="container">
+        <div class="about">
+            <div class="about-text-box">
+                <h2 class="heading-secondary">Welcome to Granny’s Hug</h2>
+                <p class="about-text">
+                    At Granny’s Hug, we believe that food is more than just nourishment—it's love, comfort, and a way to bring people together. 
+                    Our recipes are inspired by the warmth of home-cooked meals, just like the ones made with care by grandmothers around the world.
+                </p>
+                <p class="about-text">
+                    Whether you’re craving a hearty breakfast, a soul-soothing soup, or a nostalgic family favorite, our carefully curated recipes 
+                    will transport you to a place of warmth and happiness. Every dish is crafted with love, just like a hug from Granny.
+                </p>
+                <h3 class="heading-tertiary">Our Promise</h3>
+                <ul class="about-list">
+                    <li>💛 Time-honored recipes with a touch of love</li>
+                    <li>🍲 Comforting meals made simple</li>
+                    <li>👨‍👩‍👧‍👦 Bringing families together through food</li>
+                    <li>🌍 A taste of tradition from around the world</li>
+                </ul>
+                <p class="about-text">
+                    Whether you're learning to cook or looking to recreate the flavors of your childhood, 
+                    Granny’s Hug is here to guide you—one delicious recipe at a time.
+                </p>
+            </div>
+            <div class="about-img-box" role="img" aria-label="A cozy kitchen with warm homemade food"></div>
+        </div>
+    </div>
+</section>

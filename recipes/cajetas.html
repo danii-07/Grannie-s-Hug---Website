@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grannies</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script src="main.js" defer></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grannies</title>
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/queries.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Changed font -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule=""
+          src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+        ></script>
+        <script
+          defer
+          src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+        ></script>
+        <script src="main.js" defer></script>
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;  /* Font changed to Poppins */
+                background-color: #F7F7F7;
+                color: #333;
+                line-height: 1.6;
+                letter-spacing: 0.5px;
+            }
+    
+            h1, h2, h3, h4 {
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+            }
+    
+            .container {
+                margin: 0 auto;
+                max-width: 1200px;
+                padding: 0 20px;
+            }
+    
+            .heading-secondary {
+                letter-spacing: 0.5px;
+            }
+    
+            .font-quicksand {
+                font-family: 'Poppins', sans-serif;
+            }
+    
+            .font-semibold {
+                font-weight: 600;
+            }
+    
+            .font-extrabold {
+                font-weight: 800;
+            }
+    
+            .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+                letter-spacing: 1px;
+            }
+    
+            .recipe-details ul {
+                margin-bottom: 20px;
+            }
+    
+            ul, ol {
+                padding-left: 1.5rem;
+                list-style-position: inside;
+            }
+    
+            .bg-white {
+                background-color: #ffffff;
+            }
+    
+            .bg-transparent {
+                background-color: transparent;
+            }
+    
+            .border-gray-300 {
+                border-color: #d1d5db;
+            }
+    
+            .border-collapse {
+                border-collapse: collapse;
+            }
+    
+            .rounded-lg {
+                border-radius: 0.5rem;
+            }
+    
+            .shadow-lg {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+    
+            .mt-10, .mt-8, .mt-6, .mt-4, .mt-36 {
+                margin-top: 2.5rem;
+            }
+    
+            .mb-8, .mb-6, .mb-4, .mb-2 {
+                margin-bottom: 2rem;
+            }
+    
+            .space-y-4 {
+                margin-bottom: 1rem;
+            }
+    
+            .py-4 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+    
+            .px-6, .px-8, .px-4 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .tracking-wide {
+                letter-spacing: 1px;
+            }
+    
+            .tracking-tight {
+                letter-spacing: 0.3px;
+            }
+    
+            .text-gray-700 {
+                color: #4B5563;
+            }
+    
+            .text-gray-800 {
+                color: #1F2937;
+            }
+    
+            .text-orange-500 {
+                color: #FB923C;
+            }
+    
+            .hover\:text-orange-500:hover {
+                color: #FB923C;
+            }
+    
+            .bg-green-500 {
+                background-color: #10B981;
+            }
+    
+            .text-white {
+                color: white;
+            }
+    
+            .inline-block {
+                display: inline-block;
+            }
+    
+            .space-x-6 {
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+    
+            .min-w-full {
+                min-width: 100%;
+            }
+    
+            .table-auto {
+                table-layout: auto;
+            }
+            
+            .font-medium {
+                font-weight: 500;
+            }
+    
+            .text-lg {
+                font-size: 1.125rem;
+            }
+    
+            .text-xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.875rem;
+            }
+            
+            .text-4xl {
+                font-size: 2.25rem;
+            }
+    
+            .text-5xl {
+                font-size: 3rem;
+            }
+    
+            .text-6xl {
+                font-size: 4rem;
+            }
+            
+        </style>
+</head>
+<body>
+    <body class="font-sans bg-gray-100 text-gray-800">
+
+        <!-- Header -->
+        <header id="header" class="bg-[#d3c1a9] py-6 px-6 md:px-16 shadow-lg backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center text-3xl md:text-5xl font-extrabold text-gray-900 tracking-wide space-x-4 md:space-x-6">
+                    <img src="/img/grannies_hug_logo.jpg" alt="Grannies' Hug" class="h-20 md:h-28 lg:h-32 w-auto"> <!-- Responsive Logo -->
+                    <span class="font-quicksand">Granny's Hug</span>
+                </a>
+    
+                <!-- Desktop Navbar -->
+                <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl md:text-2xl font-semibold tracking-tight">
+                    <a href="index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+                    <a href="recipes.html" class="hover:text-orange-500 transition duration-300">Recipes</a>
+                    <a href="#newsletter" class="hover:text-orange-500 transition duration-300">Newsletter</a>
+                    <a href="#contact" class="hover:text-orange-500 transition duration-300">Contact</a>
+                </nav>
+    
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-800 text-4xl focus:outline-none">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+    
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden bg-[#B7B382] py-4 px-6 space-y-4 text-lg font-semibold tracking-tight md:hidden absolute top-full left-0 w-full shadow-lg">
+                <a href="#home" class="block hover:text-orange-500 transition duration-300">Home</a>
+                <a href="#recipes" class="block hover:text-orange-500 transition duration-300">Recipes</a>
+                <a href="#newsletter" class="block hover:text-orange-500 transition duration-300">Newsletter</a>
+                <a href="#contact" class="block hover:text-orange-500 transition duration-300">Contact</a>
+            </div>
+        </header>
+    
+        <!-- Push Content Down -->
+        <div class="pt-36"></div>
+    
+        <!-- Recipe Content -->
+        <div class="container mx-auto px-6 lg:px-20 mt-10 bg-white shadow-lg rounded-lg max-w-8xl">
+            <h1 class="text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-8">Cajetas (Milk Fudge)</h1>
+            
+            <div class="recipe-details mb-8">
+                <img src="../img/cajetas.jpg" alt="Cajetas" class="max-w-full h-auto rounded-md mb-8">
+                
+                <h2 class="text-4xl heading-secondary text-gray-800 mb-6 font-semibold">Ingredients</h2>
+                <ul class="list-inside pl-8 text-2xl text-gray-700 font-medium space-y-4">
+                    <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 800 grams of powdered milk</li>
+                    <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 397 grams of condensed milk (1 standard can)</li>
+                </ul>
+    
+                <!-- Instructions -->
+                <h2 class="text-3xl font-semibold mt-8 mb-6">Instructions</h2>
+                <ol class="list-decimal pl-8 text-2xl text-gray-700 font-medium space-y-4">
+                    <li>Take a bowl and add half of the powdered milk and half of the condensed milk. Start mixing with a spoon or spatula.</li>
+                    <li>Once they are integrated, add the rest of the powdered milk and condensed milk and continue mixing until you obtain a dough that does not stick to your fingers.</li>
+                    <li>Once the dough is obtained, form shapes with molds or make small balls. If desired, you can add peanuts to the milk fudge or cover them with grated coconut. Leave them in the refrigerator for approximately 5 minutes if they are a bit liquid, or at room temperature.</li>
+                </ol>
+    
+                <!-- Servings -->
+                <h2 class="text-2xl font-semibold mt-6 mb-4">Servings</h2>
+                <p class="text-2xl text-gray-700">15-20 cajetas</p>
+            </div>
+    
+            <!-- Ingredient Calculator -->
+            <div class="calculator-container mt-8 p-8 border border-gray-300 rounded-md">
+                <h2 class="text-3xl font-semibold mb-6">Ingredient Calculator</h2>
+    
+                <label for="newServings" class="block text-2xl text-gray-700 mb-4">Desired servings (how many cajetas you want):</label>
+                <input type="number" id="newServings" value="17" class="border border-gray-300 p-4 rounded-md w-1/5 mb-6 text-xl">
+    
+                <button onclick="calculateIngredients()" class="bg-green-500 text-white px-8 py-4 rounded-md text-xl">Calculate</button>
+    
+                <div id="results" class="mt-8">
+                    <h2 class="text-3xl font-semibold mb-6">Adjusted Ingredients</h2>
+                    <table class="min-w-full table-auto border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="px-8 py-6 bg-gray-100 text-left text-gray-700 text-xl">Ingredient</th>
+                                <th class="px-8 py-6 bg-gray-100 text-left text-gray-700 text-xl">Quantity</th>
+                                <th class="px-8 py-6 bg-gray-100 text-left text-gray-700 text-xl">Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ingredientTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <a href="../filterpage.html" class="inline-block bg-blue-500 text-white px-8 py-4 rounded-md mt-8 text-xl">Back to Recipes</a>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuButton = document.querySelector("#mobile-menu-button");
+                const menu = document.querySelector("#mobile-menu");
+    
+                menuButton.addEventListener("click", function () {
+                    menu.classList.toggle("hidden");
+                });
+            });
+    
+            // JavaScript to Change Background on Scroll
+            const header = document.getElementById('header');
+    
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-transparent');
+                    header.classList.remove('bg-[#d3c1a9]');
+                } else {
+                    header.classList.add('bg-[#d3c1a9]');
+                    header.classList.remove('bg-transparent');
+                }
+            });
+    
+            function calculateIngredients() {
+                const originalServings = 17.5; // Average of 15-20
+                const newServings = parseFloat(document.getElementById("newServings").value);
+    
+                if (isNaN(newServings) || newServings <= 0) {
+                    alert("Please enter a valid positive number for servings.");
+                    return;
+                }
+    
+                const ratio = newServings / originalServings;
+    
+                const ingredients = [
+                    { name: "Powdered Milk", quantity: 800, unit: "grams" },
+                    { name: "Condensed Milk", quantity: 397, unit: "grams" }
+                ];
+    
+                const adjustedIngredients = ingredients.map(ingredient => ({
+                    name: ingredient.name,
+                    quantity: ingredient.quantity * ratio,
+                    unit: ingredient.unit
+                }));
+    
+                const tableBody = document.getElementById("ingredientTableBody");
+                tableBody.innerHTML = "";
+    
+                adjustedIngredients.forEach(ingredient => {
+                    const row = tableBody.insertRow();
+                    const nameCell = row.insertCell();
+                    const quantityCell = row.insertCell();
+                    const unitCell = row.insertCell();
+    
+                    nameCell.textContent = ingredient.name;
+                    quantityCell.textContent = ingredient.quantity.toFixed(2);
+                    unitCell.textContent = ingredient.unit;
+                });
+            }
+        </script>
+    
+    </body>
+    
+</body>
+</html>
+            
