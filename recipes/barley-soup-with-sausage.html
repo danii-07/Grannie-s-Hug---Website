@@ -3,187 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barley Soup with Sausage</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            position: relative;
-        }
-
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-
-        .recipe-details {
-            margin-bottom: 20px;
-        }
-
-        .recipe-details img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            display: block;
-            border-radius: 4px;
-        }
-
-        .recipe-details p {
-            margin: 5px 0;
-            font-size: 0.95em;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 3px;
-            font-size: 0.9em;
-        }
-        input[type="number"] {
-            width: 60px;
-            padding: 4px;
-            margin-bottom: 8px;
-            font-size: 0.9em;
-        }
-        button {
-            padding: 6px 12px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        #results {
-            margin-top: 15px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 6px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .calculator-container {
-            margin-top: 25px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 60px;
-        }
-
-        .calculator-container h2 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .back-button {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            font-size: 0.9em;
-        }
-
-        .back-button:hover {
-            background-color: #2980b9;
-        }
-
-        @media (max-width: 600px) {
+    <title>Grannies</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/queries.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script src="main.js" defer></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grannies</title>
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/queries.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Changed font -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule=""
+          src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+        ></script>
+        <script
+          defer
+          src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+        ></script>
+        <script src="main.js" defer></script>
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;  /* Font changed to Poppins */
+                background-color: #F7F7F7;
+                color: #333;
+                line-height: 1.6;
+                letter-spacing: 0.5px;
+            }
+    
+            h1, h2, h3, h4 {
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+            }
+    
             .container {
-                padding: 15px;
+                margin: 0 auto;
+                max-width: 1200px;
+                padding: 0 20px;
             }
-            h1 {
-                font-size: 1.6em;
+    
+            .heading-secondary {
+                letter-spacing: 0.5px;
             }
-        }
-    </style>
-</head>
+    
+            .font-quicksand {
+                font-family: 'Poppins', sans-serif;
+            }
+    
+            .font-semibold {
+                font-weight: 600;
+            }
+    
+            .font-extrabold {
+                font-weight: 800;
+            }
+    
+            .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+                letter-spacing: 1px;
+            }
+    
+            .recipe-details ul {
+                margin-bottom: 20px;
+            }
+    
+            ul, ol {
+                padding-left: 1.5rem;
+                list-style-position: inside;
+            }
+    
+            .bg-white {
+                background-color: #ffffff;
+            }
+    
+            .bg-transparent {
+                background-color: transparent;
+            }
+    
+            .border-gray-300 {
+                border-color: #d1d5db;
+            }
+    
+            .border-collapse {
+                border-collapse: collapse;
+            }
+    
+            .rounded-lg {
+                border-radius: 0.5rem;
+            }
+    
+            .shadow-lg {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+    
+            .mt-10, .mt-8, .mt-6, .mt-4, .mt-36 {
+                margin-top: 2.5rem;
+            }
+    
+            .mb-8, .mb-6, .mb-4, .mb-2 {
+                margin-bottom: 2rem;
+            }
+    
+            .space-y-4 {
+                margin-bottom: 1rem;
+            }
+    
+            .py-4 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+    
+            .px-6, .px-8, .px-4 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+    
+            .tracking-wide {
+                letter-spacing: 1px;
+            }
+    
+            .tracking-tight {
+                letter-spacing: 0.3px;
+            }
+    
+            .text-gray-700 {
+                color: #4B5563;
+            }
+    
+            .text-gray-800 {
+                color: #1F2937;
+            }
+    
+            .text-orange-500 {
+                color: #FB923C;
+            }
+    
+            .hover\:text-orange-500:hover {
+                color: #FB923C;
+            }
+    
+            .bg-green-500 {
+                background-color: #10B981;
+            }
+    
+            .text-white {
+                color: white;
+            }
+    
+            .inline-block {
+                display: inline-block;
+            }
+    
+            .space-x-6 {
+                margin-left: 1.5rem;
+                margin-right: 1.5rem;
+            }
+    
+            .min-w-full {
+                min-width: 100%;
+            }
+    
+            .table-auto {
+                table-layout: auto;
+            }
+            
+            .font-medium {
+                font-weight: 500;
+            }
+    
+            .text-lg {
+                font-size: 1.125rem;
+            }
+    
+            .text-xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.875rem;
+            }
+            
+            .text-4xl {
+                font-size: 2.25rem;
+            }
+    
+            .text-5xl {
+                font-size: 3rem;
+            }
+    
+            .text-6xl {
+                font-size: 4rem;
+            }
+            
+        </style>
 <body>
-    <div class="container">
-        <h1>Barley Soup with Sausage</h1>
-        <div class="recipe-details">
-            <img src="../images/barley.png" alt="Barley Soup with Sausage">
-            <h2>Ingredients</h2>
-            <ul>
-                <li>75 grams onion</li>
-                <li>100 grams carrot</li>
-                <li>30 grams shiitake mushrooms</li>
-                <li>30 grams green onions/scallions</li>
-                <li>100 grams cabbage leaves</li>
-                <li>200 grams Meat and/or seafood of your choice</li>
-                <li>30 milliliters oil</li>
-                <li>Black pepper (to taste)</li>
-                <li>200 grams yakisoba noodles</li>
-            </ul>
+</head>
+<body class="font-sans bg-gray-100 text-gray-800">
 
-            <h3>Yakisoba Sauce Ingredients</h3>
-            <ul>
-                <li>10 grams sugar (adjust according to your preference)</li>
-                <li>10 milliliters soy sauce</li>
-                <li>10 milliliters oyster sauce</li>
-                <li>60 milliliters ketchup</li>
-                <li>60 milliliters Worcestershire sauce</li>
-            </ul>
+    <!-- Header -->
+    <header id="header" class="bg-[#d3c1a9] py-6 px-6 md:px-16 shadow-lg backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center text-3xl md:text-5xl font-extrabold text-gray-900 tracking-wide space-x-4 md:space-x-6">
+                <img src="/img/grannies_hug_logo.jpg" alt="Grannies' Hug" class="h-20 md:h-28 lg:h-32 w-auto"> <!-- Responsive Logo -->
+                <span class="font-quicksand">Granny's Hug</span>
+            </a>
 
-            <h2>Instructions</h2>
-            <ol>
-                <li>Make the yakisoba sauce:Mix the sugar, soy sauce, oyster sauce, ketchup, and Worcestershire sauce. You can add more sugar if you think it is needed.</li>
-                <li>Prepare your vegetables: Slice the onion, carrot, and mushrooms, chop the green onion into around 5 cm pieces, cut the cabbage into bite-size pieces, and cut the meat according to your preference.</li>
-                <li>Heat the oil in a pan or wok on medium-high heat. Cook the meat and/or seafood of your choice.</li>
-                <li>Add the sliced onions and carrots, and cook for 1-2 minutes.</li>
-                <li>Add the cabbage and cook until it is almost tender. Be careful not to overcook it.</li>
-                <li>Add the chopped green onions and sliced mushrooms, and cook for around 1-2 minutes. Season with the black pepper according to your preference.</li>
-                <li>Prepare your yakisoba noodles: Put them in a sieve, run hot water over them quickly, and loosen them. Place into the pan or wok you are using and turn the heat to medium. Be careful because the noodles might stick to the pan or wok.</li>
-                <li>Add the yakisoba sauce and mix well. Enjoy!</li>
-            </ol>
-            <h2>Servings</h2>
-            <p>3-4 servings</p>
+            <!-- Desktop Navbar -->
+            <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl md:text-2xl font-semibold tracking-tight">
+                <a href="index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+                <a href="filter.html" class="hover:text-orange-500 transition duration-300">Recipes</a>
+                <a href="#" class="hover:text-orange-500 transition duration-300">Newsletter</a>
+                <a href="#contact" class="hover:text-orange-500 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 text-4xl focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
 
-        <div class="calculator-container">
-            <h2>Ingredient Calculator</h2>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden bg-[#B7B382] py-4 px-6 space-y-4 text-lg font-semibold tracking-tight md:hidden absolute top-full left-0 w-full shadow-lg">
+            <a href="index.html" class="block hover:text-orange-500 transition duration-300">Home</a>
+            <a href="filter.html" class="block hover:text-orange-500 transition duration-300">Recipes</a>
+            <a href="newsletter" class="block hover:text-orange-500 transition duration-300">Newsletter</a>
+            <a href="#contact" class="block hover:text-orange-500 transition duration-300">Contact</a>
+        </div>
+    </header>
 
-            <label for="newServings">Desired servings:</label>
-            <input type="number" id="newServings" value="3">
+    <!-- Push Content Down -->
+    <div class="pt-36"></div>
 
-            <button onclick="calculateIngredients()">Calculate</button>
+    <!-- Recipe Content -->
+    <div class="container mx-auto px-6 lg:px-20 mt-10 bg-white shadow-lg rounded-lg max-w-8xl">
+        <h1 class="text-5xl lg:text-6xl font-extrabold text-center text-gray-800 mb-8">Barley Sausages</h1>
+        
+        <div class="recipe-details mb-8">
+            <img src="../img/barley-sausage-soup.jpg" alt="Barley Sausages" class="max-w-full h-auto rounded-md mb-8">
+            
+            <h2 class="text-4xl heading-secondary text-gray-800 mb-6 font-semibold">Ingredients</h2>
+            <ul class="list-inside pl-8 text-2xl text-gray-700 font-medium space-y-4">
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 1 cup cooked barley</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 2 tablespoons olive oil</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 1 small onion, finely chopped</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 3 cloves garlic, minced</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 1 teaspoon ground cumin</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> 1 teaspoon smoked paprika</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> ½ teaspoon ground black pepper</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> Salt, to taste</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> ¼ cup flour (all-purpose or chickpea)</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> ½ cup breadcrumbs</li>
+                <li><i class="fa fa-check-circle text-green-500 mr-3"></i> Fresh parsley, chopped for garnish</li>
+            </ul>
 
-            <div id="results">
-                <h2>Adjusted Ingredients</h2>
-                <table>
+            <!-- Instructions -->
+            <h2 class="text-3xl font-semibold mt-8 mb-6">Instructions</h2>
+            <ol class="list-decimal pl-8 text-2xl text-gray-700 font-medium space-y-4">
+                <li>In a large pan, heat the olive oil over medium heat and sauté the onion until soft, about 5 minutes. Add the garlic and cook for another minute until fragrant.</li>
+                <li>Stir in the cooked barley, cumin, paprika, black pepper, and salt. Mix thoroughly and cook for 3-4 minutes, allowing the spices to toast lightly.</li>
+                <li>Remove the pan from heat and let the mixture cool slightly. Then, transfer it to a food processor or blender and pulse until the mixture holds together. You may need to add a little bit of water if it seems too dry.</li>
+                <li>Transfer the mixture to a bowl, then stir in the flour and breadcrumbs until the mixture binds together and can be shaped into sausage-like forms. You can adjust the consistency with a bit more flour if needed.</li>
+                <li>Shape the mixture into 6-8 sausages, depending on the desired size. Heat a little olive oil in the pan and cook the sausages over medium heat for about 5-6 minutes per side, until golden and crisp.</li>
+                <li>Remove the sausages from the pan and serve hot. Garnish with fresh parsley. Enjoy!</li>
+            </ol>
+
+            <!-- Servings -->
+            <h2 class="text-2xl font-semibold mt-6 mb-4">Servings</h2>
+            <p class="text-2xl text-gray-700">4 servings</p>
+        </div>
+
+        <!-- Ingredient Calculator -->
+        <div class="calculator-container mt-8 p-8 border border-gray-300 rounded-md">
+            <h2 class="text-3xl font-semibold mb-6">Ingredient Calculator</h2>
+
+            <label for="newServings" class="block text-2xl text-gray-700 mb-4">Desired servings (Sausages):</label>
+            <input type="number" id="newServings" value="4" class="border border-gray-300 p-4 rounded-md w-1/5 mb-6 text-xl">
+
+            <button onclick="calculateIngredients()" class="bg-green-500 text-white px-8 py-4 rounded-md text-xl">Calculate</button>
+
+            <div id="results" class="mt-8">
+                <h2 class="text-3xl font-semibold mb-6">Adjusted Ingredients</h2>
+                <table class="min-w-full table-auto border-collapse">
                     <thead>
                         <tr>
-                            <th>Ingredient</th>
-                            <th>Quantity</th>
-                            <th>Unit</th>
+                            <th class="px-8 py-6 bg-gray-100 text-left text-gray-700 text-xl">Ingredient</th>
+                            <th class="px-8 py-6 bg-gray-100 text-left text-gray-700 text-xl">Quantity</th>
+                            <th class="px-8 py-6 bg-gray-100 text-left text-gray-700 text-xl">Unit</th>
                         </tr>
                     </thead>
                     <tbody id="ingredientTableBody">
@@ -191,58 +324,81 @@
                 </table>
             </div>
         </div>
-        <a href="../filterpage.html" class="back-button">Back to Recipes</a>
+
+        <a href="../filterpage.html" class="inline-block bg-blue-500 text-white px-8 py-4 rounded-md mt-8 text-xl">Back to Recipes</a>
     </div>
 
-    <script>
-        function calculateIngredients() {
-            const originalServings = 3.5; // Fixed original servings
-            const newServings = parseFloat(document.getElementById("newServings").value);
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector("#mobile-menu-button");
+        const menu = document.querySelector("#mobile-menu");
 
-            if (isNaN(newServings) || newServings <= 0) {
-                alert("Please enter a valid positive number for servings.");
-                return;
-            }
+        menuButton.addEventListener("click", function () {
+            menu.classList.toggle("hidden");
+        });
+    });
 
-            const ratio = newServings / originalServings;
+    // JavaScript to Change Background on Scroll
+    const header = document.getElementById('header');
 
-            const ingredients = [
-                { name: "Onion", quantity: 75, unit: "grams" },
-                { name: "Carrot", quantity: 100, unit: "grams" },
-                { name: "Shiitake Mushrooms", quantity: 30, unit: "grams" },
-                { name: "Green Onions", quantity: 30, unit: "grams" },
-                { name: "Cabbage Leaves", quantity: 100, unit: "grams" },
-                { name: "Meat", quantity: 200, unit: "grams" },
-                { name: "Oil", quantity: 30, unit: "milliliters" },
-                { name: "Yakisoba Noodles", quantity: 200, unit: "grams" },
-                { name: "Sugar", quantity: 10, unit: "grams" },
-                { name: "Soy Sauce", quantity: 10, unit: "milliliters" },
-                { name: "Oyster Sauce", quantity: 10, unit: "milliliters" },
-                { name: "Ketchup", quantity: 60, unit: "milliliters" },
-                { name: "Worcestershire Sauce", quantity: 60, unit: "milliliters" }
-            ];
-
-            const adjustedIngredients = ingredients.map(ingredient => ({
-                name: ingredient.name,
-                quantity: ingredient.quantity * ratio,
-                unit: ingredient.unit
-            }));
-
-            const tableBody = document.getElementById("ingredientTableBody");
-            tableBody.innerHTML = "";
-
-            adjustedIngredients.forEach(ingredient => {
-                const row = tableBody.insertRow();
-                const nameCell = row.insertCell();
-                const quantityCell = row.insertCell();
-                const unitCell = row.insertCell();
-
-                nameCell.textContent = ingredient.name;
-                quantityCell.textContent = ingredient.quantity.toFixed(2);
-                unitCell.textContent = ingredient.unit;
-            });
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-transparent');
+            header.classList.remove('bg-[#d3c1a9]');
+        } else {
+            header.classList.add('bg-[#d3c1a9]');
+            header.classList.remove('bg-transparent');
         }
-    </script>
+    });
+
+    function calculateIngredients() {
+        const originalServings = 4; // Fixed original servings
+        const newServings = parseFloat(document.getElementById("newServings").value);
+
+        if (isNaN(newServings) || newServings <= 0) {
+            alert("Please enter a valid positive number for servings.");
+            return;
+        }
+
+        const ratio = newServings / originalServings;
+
+
+        const ingredients = [
+            { name: "Cooked Barley", quantity: 1, unit: "cup" },
+            { name: "Olive Oil", quantity: 2, unit: "tablespoons" },
+            { name: "Small Onion", quantity: 1, unit: "piece" },
+            { name: "Garlic Cloves", quantity: 3, unit: "cloves" },
+            { name: "Ground Cumin", quantity: 1, unit: "teaspoon" },
+            { name: "Smoked Paprika", quantity: 1, unit: "teaspoon" },
+            { name: "Ground Black Pepper", quantity: 0.5, unit: "teaspoon" },
+            { name: "Salt", quantity: 0, unit: "to taste" },
+            { name: "Flour", quantity: 0.25, unit: "cup" },
+            { name: "Breadcrumbs", quantity: 0.5, unit: "cup" },
+            { name: "Fresh Parsley", quantity: 1, unit: "tablespoon" }
+        ];
+
+        const adjustedIngredients = ingredients.map(ingredient => ({
+            name: ingredient.name,
+            quantity: (ingredient.quantity * ratio).toFixed(2),
+            unit: ingredient.unit
+        }));
+
+        const tableBody = document.getElementById("ingredientTableBody");
+        tableBody.innerHTML = "";
+        adjustedIngredients.forEach(ingredient => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td class="px-8 py-4 text-lg">${ingredient.name}</td>
+                <td class="px-8 py-4 text-lg">${ingredient.quantity}</td>
+                <td class="px-8 py-4 text-lg">${ingredient.unit}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+</script>
+
+</body>
+
 </body>
 </html>
             

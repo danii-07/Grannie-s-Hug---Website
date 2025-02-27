@@ -66,20 +66,19 @@
     });
 </script>
 
-<header id="header" class="bg-[#d3c1a9] py-6 px-6 md:px-16 shadow-md backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+<!-- Header -->
+<header id="header" class="bg-[#d3c1a9] py-6 px-6 md:px-16 shadow-lg backdrop-blur-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
     <div class="container mx-auto flex justify-between items-center">
-        <!-- Logo with Old Charm Typography -->
+        <!-- Logo -->
         <a href="#" class="flex items-center text-3xl md:text-5xl font-extrabold text-gray-900 tracking-wide space-x-4 md:space-x-6">
-            <img src="/img/grannies_hug_logo.jpg" alt="Grannies' Hug" 
-                class="h-20 md:h-28 lg:h-32 w-auto"> <!-- Responsive Logo -->
+            <img src="/img/grannies_hug_logo.jpg" alt="Grannies' Hug" class="h-20 md:h-28 lg:h-32 w-auto"> <!-- Responsive Logo -->
             <span class="font-quicksand">Granny's Hug</span>
         </a>
-        
 
         <!-- Desktop Navbar -->
         <nav class="hidden md:flex space-x-8 lg:space-x-12 text-xl md:text-2xl font-semibold text-gray-800 tracking-tight">
-            <a href="#home" class="hover:text-orange-500 transition duration-300">Home</a>
-            <a href="#recipes" class="hover:text-orange-500 transition duration-300">Recipes</a>
+            <a href="index.html" class="hover:text-orange-500 transition duration-300">Home</a>
+            <a href="filter.html" class="hover:text-orange-500 transition duration-300">Recipes</a>
             <a href="#newsletter" class="hover:text-orange-500 transition duration-300">Newsletter</a>
             <a href="#contact" class="hover:text-orange-500 transition duration-300">Contact</a>
         </nav>
@@ -99,15 +98,23 @@
     </div>
 </header>
 
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-800 text-4xl focus:outline-none">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden bg-[#B7B382] py-4 px-6 space-y-4 text-lg font-semibold text-gray-800 tracking-tight md:hidden absolute top-full left-0 w-full shadow-lg">
+        <a href="#home" class="block hover:text-orange-500 transition duration-300">Home</a>
+        <a href="#recipes" class="block hover:text-orange-500 transition duration-300">Recipes</a>
+        <a href="#newsletter" class="block hover:text-orange-500 transition duration-300">Newsletter</a>
+        <a href="#contact" class="block hover:text-orange-500 transition duration-300">Contact</a>
+    </div>
+</header>
+
 <!-- Fix Overlapping Issue: Push Content Down -->
 <div class="pt-36"></div> <!-- Ensures content starts below navbar -->
-
-
-
-
- 
-    
-
 
 <!-- Home -->
  <main>
