@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceviche</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .recipe-details {
+            margin-bottom: 20px;
+        }
+
+        .recipe-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .recipe-details p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        button {
+            padding: 6px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        #results {
+            margin-top: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .calculator-container {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 60px;
+        }
+
+        .calculator-container h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 0.9em;
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ceviche</h1>
+        <div class="recipe-details">
+            <img src="../images/ceviche.png" alt="Ceviche">
+            <h2>Ingredients</h2>
+            <ul>
+                <li>1000 grams of fish of your choice, diced into small cubes</li>
+                <li>300 grams medium onions, finely chopped</li>
+                <li>300 grams sweet red peppers, finely chopped</li>
+                <li>30 grams cilantro, very finely chopped</li>
+                <li>300 milliliters lemon juice (approximately 15 lemons)</li>
+                <li>Salt to taste</li>
+            </ul>
+
+            <h2>Instructions</h2>
+            <ol>
+                <li>In a large bowl, place the thawed fish and cover it completely with the lemon juice. Stir well to ensure all the fish is in contact with the juice.</li>
+                <li>Add the chopped onion and pepper to the fish, mixing carefully to distribute the ingredients evenly.</li>
+                <li>Verify that the lemon juice completely covers the fish. If necessary, add more lemon juice.</li>
+                <li>Add the chopped cilantro and salt to taste. Stir again until everything is well incorporated.</li>
+                <li>Let the mixture rest in the refrigerator for two hours so that the fish marinates and cooks in the lemon juice.</li>
+                <li>Serve the ceviche accompanied by soda crackers, fried green plantains, and sauces to taste.</li>
+            </ol>
+            <h2>Servings</h2>
+            <p>5-7 servings</p>
+        </div>
+
+        <div class="calculator-container">
+            <h2>Ingredient Calculator</h2>
+
+            <label for="newServings">Desired servings:</label>
+            <input type="number" id="newServings" value="6">
+
+            <button onclick="calculateIngredients()">Calculate</button>
+
+            <div id="results">
+                <h2>Adjusted Ingredients</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredientTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="../filterpage.html" class="back-button">Back to Recipes</a>
+    </div>
+
+    <script>
+        function calculateIngredients() {
+            const originalServings = 6; // Average of 5-7
+            const newServings = parseFloat(document.getElementById("newServings").value);
+
+            if (isNaN(newServings) || newServings <= 0) {
+                alert("Please enter a valid positive number for servings.");
+                return;
+            }
+
+            const ratio = newServings / originalServings;
+
+            const ingredients = [
+                { name: "Fish", quantity: 1000, unit: "grams" },
+                { name: "Onions", quantity: 300, unit: "grams" },
+                { name: "Red Peppers", quantity: 300, unit: "grams" },
+                { name: "Cilantro", quantity: 30, unit: "grams" },
+                { name: "Lemon Juice", quantity: 300, unit: "milliliters" }
+            ];
+
+            const adjustedIngredients = ingredients.map(ingredient => ({
+                name: ingredient.name,
+                quantity: ingredient.quantity * ratio,
+                unit: ingredient.unit
+            }));
+
+            const tableBody = document.getElementById("ingredientTableBody");
+            tableBody.innerHTML = "";
+
+            adjustedIngredients.forEach(ingredient => {
+                const row = tableBody.insertRow();
+                const nameCell = row.insertCell();
+                const quantityCell = row.insertCell();
+                const unitCell = row.insertCell();
+
+                nameCell.textContent = ingredient.name;
+                quantityCell.textContent = ingredient.quantity.toFixed(2);
+                unitCell.textContent = ingredient.unit;
+            });
+        }
+    </script>
+</body>
+</html>
+            
