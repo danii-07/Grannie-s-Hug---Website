@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakshuka</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .recipe-details {
+            margin-bottom: 20px;
+        }
+
+        .recipe-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .recipe-details p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        button {
+            padding: 6px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        #results {
+            margin-top: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .calculator-container {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 60px;
+        }
+
+        .calculator-container h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 0.9em;
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shakshuka</h1>
+        <div class="recipe-details">
+            <img src="../images/shak.png" alt="Shakshuka">
+            <h2>Ingredients</h2>
+            <ul>
+                <li>Extra-virgin oil (approximately 45 milliliters)</li>
+                <li>200 grams large yellow onion, chopped</li>
+                <li>200 grams green peppers, chopped</li>
+                <li>10 grams garlic cloves, chopped</li>
+                <li>5 grams ground coriander</li>
+                <li>5 grams sweet paprika</li>
+                <li>2.5 grams ground cumin</li>
+                <li>Pinch red pepper flakes (optional)</li>
+                <li>Salt and pepper (to taste)</li>
+                <li>900 grams medium tomatoes, chopped</li>
+                <li>120 milliliters tomato sauce</li>
+                <li>6 large eggs</li>
+                <li>15 grams chopped fresh parsley leaves</li>
+                <li>15 grams chopped fresh mint leaves</li>
+            </ul>
+
+            <h2>Instructions</h2>
+            <ol>
+                <li>Heat 45 ml olive oil in a large cast iron skillet. Add the onions, green peppers, garlic, spices, pinch salt and pepper. Cook, stirring occasionally, until the vegetables have softened, about 5 minutes.</li>
+                <li>Add the tomatoes and tomato sauce. Cover and let simmer for about 15 minutes. Uncover and cook a bit longer to allow the mixture to reduce and thicken. Taste and adjust the seasoning to your liking.</li>
+                <li>Using a wooden spoon, make 6 indentations, or “wells,” in the tomato mixture (make sure the indentations are spaced out). Gently crack an egg into each indention.</li>
+                <li>Reduce the heat, cover the skillet, and cook on low until the egg whites are set.</li>
+                <li>Uncover and add the fresh parsley and mint. You can add more black pepper or crushed red pepper, if you like. Serve with warm, pita, challah or crusty bread of your choice.</li>
+            </ol>
+            <h2>Servings</h2>
+            <p>6 servings</p>
+        </div>
+
+        <div class="calculator-container">
+            <h2>Ingredient Calculator</h2>
+
+            <label for="newServings">Desired servings:</label>
+            <input type="number" id="newServings" value="6">
+
+            <button onclick="calculateIngredients()">Calculate</button>
+
+            <div id="results">
+                <h2>Adjusted Ingredients</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredientTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="../filterpage.html" class="back-button">Back to Recipes</a>
+    </div>
+
+    <script>
+        function calculateIngredients() {
+            const originalServings = 6; // Fixed original servings
+            const newServings = parseFloat(document.getElementById("newServings").value);
+
+            if (isNaN(newServings) || newServings <= 0) {
+                alert("Please enter a valid positive number for servings.");
+                return;
+            }
+
+            const ratio = newServings / originalServings;
+
+            const ingredients = [
+                { name: "Olive Oil", quantity: 45, unit: "milliliters" },
+                { name: "Onion", quantity: 200, unit: "grams" },
+                { name: "Green Peppers", quantity: 200, unit: "grams" },
+                { name: "Garlic", quantity: 10, unit: "grams" },
+                { name: "Coriander", quantity: 5, unit: "grams" },
+                { name: "Paprika", quantity: 5, unit: "grams" },
+                { name: "Cumin", quantity: 2.5, unit: "grams" },
+                { name: "Tomatoes", quantity: 900, unit: "grams" },
+                { name: "Tomato Sauce", quantity: 120, unit: "milliliters" },
+                { name: "Parsley", quantity: 15, unit: "grams" },
+                { name: "Mint", quantity: 15, unit: "grams" }
+            ];
+
+            const adjustedIngredients = ingredients.map(ingredient => ({
+                name: ingredient.name,
+                quantity: ingredient.quantity * ratio,
+                unit: ingredient.unit
+            }));
+
+            const tableBody = document.getElementById("ingredientTableBody");
+            tableBody.innerHTML = "";
+
+            adjustedIngredients.forEach(ingredient => {
+                const row = tableBody.insertRow();
+                const nameCell = row.insertCell();
+                const quantityCell = row.insertCell();
+                const unitCell = row.insertCell();
+
+                nameCell.textContent = ingredient
+                .name;
+                quantityCell.textContent = ingredient.quantity.toFixed(2);
+                unitCell.textContent = ingredient.unit;
+            });
+        }
+    </script>
+</body>
+</html>
+            

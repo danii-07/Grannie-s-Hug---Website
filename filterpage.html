@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Filter Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-container {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-container label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .filter-container input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex-grow: 1;
+            box-sizing: border-box;
+        }
+
+        .recipe-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Force two columns */
+            gap: 20px;
+        }
+
+        .recipe-item {
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-item:hover {
+            background-color: #e6f2ff;
+        }
+
+        .recipe-item img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .recipe-item a {
+            text-decoration: none;
+            color: #3498db;
+            text-align: center;
+        }
+
+        .recipe-item a:hover {
+            color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .filter-container label {
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
+
+            .filter-container input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .recipe-list {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recipes</h1>
+        <div class="filter-container">
+            <label for="search">Search:</label>
+            <input type="text" id="search" onkeyup="filterRecipes()">
+        </div>
+        <ul class="recipe-list" id="recipeList">
+        </ul>
+    </div>
+
+    <script>
+        const recipes = [
+            { name: 'Banh Mi', image: 'images/bh.png', ingredients: "Bread, Meat, Pickles", instructions: "1. Assemble ingredients" },
+            { name: 'Yakisoba', image: 'images/yaki.png', ingredients: "Noodles, Vegetables, Sauce", instructions: "1. Stir-fry" },
+            { name: 'Gazpacho', image: 'images/gaz.png', ingredients: "Tomatoes, Peppers, Cucumbers", instructions: "1. Blend" },
+            { name: 'Barley Soup with Sausage', image: 'images/barley.png', ingredients: "Barley, Sausage, Vegetables", instructions: "1. Cook" },
+            { name: 'Shakshuka', image: 'images/shak.png', ingredients: "Eggs, Tomatoes, Peppers", instructions: "1. Simmer" },
+            { name: 'Gallo Pinto', image: 'images/gp.jpg', ingredients: "2 cups of cooked day-old white rice, 1 can of beans, 1 and a half cups bean broth or water, 1 yellow onion, 1 red pepper, cilantro, Salsa Lizano, sea salt, vegetable oil", instructions: "1. Heat oil in a large skillet over medium heat. 2. Add onion, pepper, and salt. 3. Lightly cook until the onion is translucent, and you have just made sofrito! 5. Add the beans with the broth and toss with the chopped vegetables and oil. 6. Add the rice (cooked) to the skillet. 7. Toss until well combined with the beans and spices. 8. Add the cilantro and lightly toss. 9. Heat thoroughly and add the Salsa Lizano. 10. Mix again and then serve- preferably with fried eggs, warm corn tortillas and a hot cup of Costa Rican coffee or agua dulce." },
+            { name: 'Ceviche', image: 'images/ceviche.png', ingredients: "Eggs, Tomatoes, Peppers", instructions: "1. Simmer" },
+            { name: 'Patacones', image: 'images/patacones.jpg', ingredients: "Eggs, Tomatoes, Peppers", instructions: "1. Simmer" },
+            { name: 'Picadillo de papa', image: 'images/picadillo.png', ingredients: "Eggs, Tomatoes, Peppers", instructions: "1. Simmer" },
+            { name: 'Cajetas', image: 'images/cajetas.jpg', ingredients: "Eggs, Tomatoes, Peppers", instructions: "1. Simmer" },
+        ];
+
+        function displayRecipes(recipes) {
+            const recipeList = document.getElementById('recipeList');
+            recipeList.innerHTML = '';
+            recipes.forEach(recipe => {
+                const recipeItem = document.createElement('li');
+                recipeItem.className = 'recipe-item';
+
+                const recipeImage = document.createElement('img');
+                recipeImage.src = recipe.image;
+                recipeImage.alt = recipe.name;
+
+                const imageLink = document.createElement('a');
+                const filename = recipe.name.toLowerCase().replace(/ /g, '-') + ".html";
+                imageLink.href = "recipes/" + filename;
+                imageLink.appendChild(recipeImage);
+                recipeItem.appendChild(imageLink);
+
+                const recipeName = document.createElement('div');
+                recipeName.textContent = recipe.name;
+                recipeName.style.textAlign = 'center';
+                recipeItem.appendChild(recipeName);
+                recipeList.appendChild(recipeItem);
+            });
+        }
+
+        function filterRecipes() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const filteredRecipes = recipes.filter(recipe => recipe.name.toLowerCase().includes(searchInput));
+            displayRecipes(filteredRecipes);
+        }
+
+        displayRecipes(recipes);
+    </script>
+</body>
+</html>
