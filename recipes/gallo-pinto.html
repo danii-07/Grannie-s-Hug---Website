@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +42,38 @@
         .recipe-details p {
             margin: 0;
         }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -51,11 +82,120 @@
         <div class="recipe-details">
             <img src="../images/gp.jpg" alt="Gallo Pinto">
             <h2>Ingredients</h2>
-            <p>Bread, Meat, Pickles</p>
+            <ul>
+                <li>2 cups of cooked day-old white rice</li>
+                <li>1.5 cups of cooked day-old black or red beans (or 1 can)</li>
+                <li>1.5 cups bean broth or water</li>
+                <li>0.5 cup yellow onion (roughly 1/2 medium onion, chopped)</li>
+                <li>0.5 cup red pepper (roughly 1/2 medium pepper, chopped)</li>
+                <li>2 tablespoons chopped cilantro</li>
+                <li>2 tablespoons Salsa Lizano</li>
+                <li>Sea salt to taste</li>
+                <li>Vegetable oil or olive oil</li>
+              </ul>
             <h2>Instructions</h2>
-            <p>1. Assemble ingredients</p>
-            <a href="../filterpage.html">Back</a>
+            <ol>
+                <li>Heat oil in a large skillet over medium heat.</li>
+                <li>Add onion, pepper, and salt.</li>
+                <li>Lightly cook until the onion is translucent.</li>
+                <li>Then add the beans with broth and toss with the chopped vegetables and oil.</li>
+                <li>Add the rice (cooked) to the skillet.</li>
+                <li>And toss until well combined with the beans and spices.</li>
+                <li>Add the cilantro and lightly toss.</li>
+                <li>Heat thoroughly and add the Salsa Lizano.</li>
+                <li>Mix again and then serve- preferably with fried eggs, warm corn tortillas and a hot cup of Costa Rican coffee or agua dulce.</li>
+              </ol>
+              <h2>Servings</h2>
+              <p> 4-6 servings</p>
+              <a href="../filterpage.html" class="back-button">Back to Recipes</a>
+        </div>
+        
+        <style>
+            .back-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #3498db; /* Blue background */
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+                margin-top: 20px;
+            }
+        
+            .back-button:hover {
+                background-color: #2980b9; /* Darker blue on hover */
+            }
+        </style>
+
+
+        <div>
+            <h2>Ingredient Calculator</h2>
+            <label for="originalServings">Original Servings:</label>
+            <input type="number" id="originalServings" value="4">
+
+            <label for="newServings">New Servings:</label>
+            <input type="number" id="newServings" value="4">
+
+            <button onclick="calculateIngredients()">Calculate</button>
+
+            <div id="results">
+                <h2>Adjusted Ingredients</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredientTableBody">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
+    <script>
+        function calculateIngredients() {
+            const originalServings = parseFloat(document.getElementById("originalServings").value);
+            const newServings = parseFloat(document.getElementById("newServings").value);
+
+            if (isNaN(originalServings) || isNaN(newServings) || originalServings <= 0 || newServings <= 0) {
+                alert("Please enter valid positive numbers for servings.");
+                return;
+            }
+
+            const ratio = newServings / originalServings;
+
+            const ingredients = [
+                { name: "Rice", quantity: 2, unit: "cups" },
+                { name: "Beans", quantity: 1.5, unit: "cups" },
+                { name: "Onion", quantity: 0.5, unit: "cup" },
+                { name: "Bell Pepper", quantity: 0.5, unit: "cup" },
+                { name: "Cilantro", quantity: 2, unit: "tbsp" },
+                { name: "Lizano Sauce", quantity: 2, unit: "tbsp" }
+            ];
+
+            const adjustedIngredients = ingredients.map(ingredient => ({
+                name: ingredient.name,
+                quantity: ingredient.quantity * ratio,
+                unit: ingredient.unit
+            }));
+
+            const tableBody = document.getElementById("ingredientTableBody");
+            tableBody.innerHTML = "";
+
+            adjustedIngredients.forEach(ingredient => {
+                const row = tableBody.insertRow();
+                const nameCell = row.insertCell();
+                const quantityCell = row.insertCell();
+                const unitCell = row.insertCell();
+
+                nameCell.textContent = ingredient.name;
+                quantityCell.textContent = ingredient.quantity.toFixed(2);
+                unitCell.textContent = ingredient.unit;
+            });
+        }
+    </script>
 </body>
 </html>
