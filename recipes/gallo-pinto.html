@@ -10,6 +10,7 @@
             background-color: #f4f4f4;
             margin: 0;
             color: #333;
+            line-height: 1.6; /* Improved line spacing */
         }
 
         .container {
@@ -19,12 +20,14 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            position: relative;
         }
 
         h1 {
             color: #2c3e50;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Reduced margin */
+            font-size: 1.8em; /* Adjusted font size */
         }
 
         .recipe-details {
@@ -40,39 +43,87 @@
         }
 
         .recipe-details p {
-            margin: 0;
+            margin: 5px 0; /* Adjusted margins */
+            font-size: 0.95em; /* Adjusted font size */
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 3px; /* Reduced margin */
+            font-size: 0.9em; /* Adjusted font size */
         }
         input[type="number"] {
-            width: 80px;
-            padding: 5px;
-            margin-bottom: 10px;
+            width: 60px; /* Reduced width */
+            padding: 4px; /* Reduced padding */
+            margin-bottom: 8px; /* Reduced margin */
+            font-size: 0.9em; /* Adjusted font size */
         }
         button {
-            padding: 8px 15px;
+            padding: 6px 12px; /* Reduced padding */
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
+            margin-top: 10px; /* Reduced margin */
+            font-size: 0.9em; /* Adjusted font size */
         }
         #results {
-            margin-top: 20px;
+            margin-top: 15px; /* Reduced margin */
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 10px; /* Reduced margin */
+            font-size: 0.9em; /* Adjusted font size */
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 6px; /* Reduced padding */
             text-align: left;
         }
         th {
             background-color: #f2f2f2;
+        }
+
+        .calculator-container {
+            margin-top: 25px; /* Reduced margin */
+            padding: 15px; /* Reduced padding */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 60px; /* Adjusted margin */
+        }
+
+        .calculator-container h2 {
+            margin-bottom: 10px; /* Reduced margin */
+            font-size: 1.2em; /* Adjusted font size */
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 15px; /* Reduced padding */
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 15px; /* Reduced bottom */
+            right: 15px; /* Reduced right */
+            font-size: 0.9em; /* Adjusted font size */
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px; /* Reduced padding on smaller screens */
+            }
+            h1 {
+                font-size: 1.6em; /* Further reduce font size on smaller screens */
+            }
         }
     </style>
 </head>
@@ -83,16 +134,16 @@
             <img src="../images/gp.jpg" alt="Gallo Pinto">
             <h2>Ingredients</h2>
             <ul>
-                <li>2 cups of cooked day-old white rice</li>
-                <li>1.5 cups of cooked day-old black or red beans (or 1 can)</li>
-                <li>1.5 cups bean broth or water</li>
-                <li>0.5 cup yellow onion (roughly 1/2 medium onion, chopped)</li>
-                <li>0.5 cup red pepper (roughly 1/2 medium pepper, chopped)</li>
-                <li>2 tablespoons chopped cilantro</li>
-                <li>2 tablespoons Salsa Lizano</li>
+                <li>360 grams cooked day-old white rice</li>
+                <li>300 grams cooked day-old black or red beans (or 1 can)</li>
+                <li>360 milliliters bean broth or water</li>
+                <li>75 grams yellow onion (roughly 1/2 medium onion, chopped)</li>
+                <li>75 grams red pepper (roughly 1/2 medium pepper, chopped)</li>
+                <li>10 grams chopped cilantro</li>
+                <li>30 milliliters Salsa Lizano</li>
                 <li>Sea salt to taste</li>
                 <li>Vegetable oil or olive oil</li>
-              </ul>
+            </ul>
             <h2>Instructions</h2>
             <ol>
                 <li>Heat oil in a large skillet over medium heat.</li>
@@ -104,36 +155,15 @@
                 <li>Add the cilantro and lightly toss.</li>
                 <li>Heat thoroughly and add the Salsa Lizano.</li>
                 <li>Mix again and then serve- preferably with fried eggs, warm corn tortillas and a hot cup of Costa Rican coffee or agua dulce.</li>
-              </ol>
-              <h2>Servings</h2>
-              <p> 4-6 servings</p>
-              <a href="../filterpage.html" class="back-button">Back to Recipes</a>
+            </ol>
+            <h2>Servings</h2>
+            <p>4-6 servings</p>
         </div>
-        
-        <style>
-            .back-button {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #3498db; /* Blue background */
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
-                margin-top: 20px;
-            }
-        
-            .back-button:hover {
-                background-color: #2980b9; /* Darker blue on hover */
-            }
-        </style>
 
-
-        <div>
+        <div class="calculator-container">
             <h2>Ingredient Calculator</h2>
-            <label for="originalServings">Original Servings:</label>
-            <input type="number" id="originalServings" value="4">
 
-            <label for="newServings">New Servings:</label>
+            <label for="newServings">Desired servings:</label>
             <input type="number" id="newServings" value="4">
 
             <button onclick="calculateIngredients()">Calculate</button>
@@ -153,27 +183,29 @@
                 </table>
             </div>
         </div>
+        <a href="../filterpage.html" class="back-button">Back to Recipes</a>
     </div>
 
     <script>
         function calculateIngredients() {
-            const originalServings = parseFloat(document.getElementById("originalServings").value);
+            const originalServings = 4;
             const newServings = parseFloat(document.getElementById("newServings").value);
 
-            if (isNaN(originalServings) || isNaN(newServings) || originalServings <= 0 || newServings <= 0) {
-                alert("Please enter valid positive numbers for servings.");
+            if (isNaN(newServings) || newServings <= 0) {
+                alert("Please enter a valid positive number for servings.");
                 return;
             }
 
             const ratio = newServings / originalServings;
 
             const ingredients = [
-                { name: "Rice", quantity: 2, unit: "cups" },
-                { name: "Beans", quantity: 1.5, unit: "cups" },
-                { name: "Onion", quantity: 0.5, unit: "cup" },
-                { name: "Bell Pepper", quantity: 0.5, unit: "cup" },
-                { name: "Cilantro", quantity: 2, unit: "tbsp" },
-                { name: "Lizano Sauce", quantity: 2, unit: "tbsp" }
+                { name: "Rice", quantity: 360, unit: "grams" },
+                { name: "Beans", quantity: 300, unit: "grams" },
+                { name: "Onion", quantity: 75, unit: "grams" },
+                { name: "Bell Pepper", quantity: 75, unit: "grams" },
+                { name: "Cilantro", quantity: 10, unit: "grams" },
+                { name: "Lizano Sauce", quantity: 30, unit: "milliliters" },
+                { name: "Bean Broth", quantity: 360, unit: "milliliters"}
             ];
 
             const adjustedIngredients = ingredients.map(ingredient => ({
@@ -198,4 +230,3 @@
         }
     </script>
 </body>
-</html>

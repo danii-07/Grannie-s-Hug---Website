@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +10,7 @@
             background-color: #f4f4f4;
             margin: 0;
             color: #333;
+            line-height: 1.6;
         }
 
         .container {
@@ -20,12 +20,14 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            position: relative;
         }
 
         h1 {
             color: #2c3e50;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
         }
 
         .recipe-details {
@@ -41,7 +43,86 @@
         }
 
         .recipe-details p {
-            margin: 0;
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.9em;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        button {
+            padding: 6px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        #results {
+            margin-top: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .calculator-container {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 60px;
+        }
+
+        .calculator-container h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 0.9em;
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
         }
     </style>
 </head>
@@ -52,24 +133,24 @@
             <img src="../images/yaki.png" alt="Yakisoba">
             <h2>Ingredients</h2>
             <ul>
-                <li>½ onion</li>
-                <li>1 carrot</li>
-                <li>3 shiitake mushrooms</li>
-                <li>2 green onions/scallions</li>
-                <li>4 cabbage leaves</li>
-                <li>Meat and/or seafood of your choice</li>
-                <li>2 tbsp oil</li>
-                <li>Black pepper</li>
-                <li>Yakisoba noodles</li>
+                <li>75 grams onion</li>
+                <li>100 grams carrot</li>
+                <li>30 grams shiitake mushrooms</li>
+                <li>30 grams green onions/scallions</li>
+                <li>100 grams cabbage leaves</li>
+                <li>200 grams Meat and/or seafood of your choice</li>
+                <li>30 milliliters oil</li>
+                <li>Black pepper (to taste)</li>
+                <li>200 grams Yakisoba noodles</li>
             </ul>
 
             <h3>Yakisoba Sauce Ingredients:</h3>
             <ul>
-                <li>2 tsp sugar (adjust according to your preference)</li>
-                <li>2 tsp soy sauce</li>
-                <li>2 tsp oyster sauce</li>
-                <li>4 tbsp ketchup</li>
-                <li>4 tbsp Worcestershire sauce</li>
+                <li>10 grams sugar (adjust according to your preference)</li>
+                <li>10 milliliters soy sauce</li>
+                <li>10 milliliters oyster sauce</li>
+                <li>60 milliliters ketchup</li>
+                <li>60 milliliters Worcestershire sauce</li>
             </ul>
 
             <h2>Instructions</h2>
@@ -86,25 +167,83 @@
 
             <h2>Servings</h2>
             <p>3-4 servings</p>
-            <a href="../filterpage.html" class="back-button">Back to Recipes</a>
         </div>
-        <style>
-            .back-button {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #3498db; /* Blue background */
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
-                margin-top: 20px;
-            }
-        
-            .back-button:hover {
-                background-color: #2980b9; /* Darker blue on hover */
-            }
-        </style>
+
+        <div class="calculator-container">
+            <h2>Ingredient Calculator</h2>
+
+            <label for="newServings">Desired servings:</label>
+            <input type="number" id="newServings" value="3">
+
+            <button onclick="calculateIngredients()">Calculate</button>
+
+            <div id="results">
+                <h2>Adjusted Ingredients</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredientTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="../filterpage.html" class="back-button">Back to Recipes</a>
     </div>
+
+    <script>
+        function calculateIngredients() {
+            const originalServings = 3; // Fixed original servings
+            const newServings = parseFloat(document.getElementById("newServings").value);
+
+            if (isNaN(newServings) || newServings <= 0) {
+                alert("Please enter a valid positive number for servings.");
+                return;
+            }
+
+            const ratio = newServings / originalServings;
+
+            const ingredients = [
+                { name: "Onion", quantity: 75, unit: "grams" },
+                { name: "Carrot", quantity: 100, unit: "grams" },
+                { name: "Shiitake Mushrooms", quantity: 30, unit: "grams" },
+                { name: "Green Onions", quantity: 30, unit: "grams" },
+                { name: "Cabbage Leaves", quantity: 100, unit: "grams" },
+                { name: "Meat/Seafood", quantity: 200, unit: "grams" },
+                { name: "Oil", quantity: 30, unit: "milliliters" },
+                { name: "Yakisoba Noodles", quantity: 200, unit: "grams" },
+                { name: "Sugar", quantity: 10, unit: "grams" },
+                { name: "Soy Sauce", quantity: 10, unit: "milliliters" },
+                { name: "Oyster Sauce", quantity: 10, unit: "milliliters" },
+                { name: "Ketchup", quantity: 60, unit: "milliliters" },
+                { name: "Worcestershire Sauce", quantity: 60, unit: "milliliters" }
+                ];
+
+            const adjustedIngredients = ingredients.map(ingredient => ({
+                name: ingredient.name,
+                quantity: ingredient.quantity * ratio,
+                unit: ingredient.unit
+            }));
+
+            const tableBody = document.getElementById("ingredientTableBody");
+            tableBody.innerHTML = "";
+
+            adjustedIngredients.forEach(ingredient => {
+                const row = tableBody.insertRow();
+                const nameCell = row.insertCell();
+                const quantityCell = row.insertCell();
+                const unitCell = row.insertCell();
+
+                nameCell.textContent = ingredient.name;
+                quantityCell.textContent = ingredient.quantity.toFixed(2);
+                unitCell.textContent = ingredient.unit;
+            });
+        }
+    </script>
 </body>
 </html>
             
